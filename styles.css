@@ -15,7 +15,7 @@ body {
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* Creates 5 columns of equal width */
   gap: 20px; /* Adjust the gap between items as needed */
-  margin: 20px; /* Add some margin around the grid for spacing */
+  margin: 20px auto; /* Add some margin around the grid for spacing */
 }
 
 .item {
@@ -30,7 +30,7 @@ body {
 
 .item img {
   width: 100%; /* Makes the image fill the column width */
-  max-width: 200px; /* Limits image size */
+  max-width: 250px; /* Limits image size */
   height: auto; /* Keeps the image aspect ratio */
   margin-bottom: 10px; /* Space between the image and the text below */
 }
