@@ -1,0 +1,98 @@
+#menu-icon {
+  /* styles for menu icon */
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 3; /* Above sidebar and other content */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+#menu-icon div {
+  height: 3px;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* Sidebar initially offscreen */
+#sidebar {
+  height: 100vh; /* Full height */
+  width: 240px; /* Width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+  transform: translateX(-250px);
+  transition: transform 0.3s ease-in-out;
+  background-color: rgb(0, 0, 0);
+}
+
+/* Transforms for when sidebar is open */
+#sidebar.sidebar-open {
+  transform: translateX(0);
+}
+
+#sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+  display: block;
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition for color and shadow */
+}
+
+#sidebar a:hover {
+  color: #d783ff; /* Light purple color for text */
+  text-shadow: 0 0 5px #d783ff,
+    /* Light purple shadow with a small blur */ 0 0 1px #b55bff;
+}
+
+#menu-icon {
+  /* styles for menu icon */
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 3; /* Above sidebar and other content */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+#menu-icon div {
+  height: 3px;
+  background: #333;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* Sidebar initially offscreen */
+#sidebar {
+  transform: translateX(-250px);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Transforms for when sidebar is open */
+#sidebar.sidebar-open {
+  transform: translateX(0);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.pushed #main-content {
+  margin-left: 240px; /* Adjust this value to match the width of your sidebar */
+  transition: margin-left 0.3s ease-in-out; /* Optional: animate the transition */
+}
+
+
+

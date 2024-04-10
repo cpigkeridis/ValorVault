@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  background-color: lightyellow;
+}
+
+.main {
+  margin-left: 240px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Creates 5 columns of equal width */
+  gap: 20px; /* Adjust the gap between items as needed */
+  margin: 20px; /* Add some margin around the grid for spacing */
+}
+
+.item {
+  /* Styling for individual items */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow to each item */
+}
+
+.item img {
+  width: 100%; /* Makes the image fill the column width */
+  max-width: 200px; /* Limits image size */
+  height: auto; /* Keeps the image aspect ratio */
+  margin-bottom: 10px; /* Space between the image and the text below */
+}
+
+.site-banner {
+  margin-left: 250px; /* Same as the sidebar width */
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0; /* Position at the top of the viewport */
+  left: 39%; /* Start from the center horizontally */
+  transform: translateX(
+    -50%
+  ); /* Move back by half of its own width to center it */
+  width: 80%; /* Adjust width as needed */
+  max-width: 100%; /* Ensure it doesn't overflow the viewport */
+  /* Add other styles as needed */
+}
+
+#main-content {
+  padding-top: 200px; /* Replace [Banner Height] with the actual height of your banner */
+  margin-left: 0; /* Ensure no margin when sidebar is closed */
+}
+
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's above everything else */
+}
+
+.enlarged-image {
+  max-width: 90%; /* Adjust size as needed */
+  max-height: 90%; /* Adjust size as needed */
+  box-shadow: 0 0 20px #fff; /* Optional: Adds a shadow for contrast */
+  background-color: #000000;
+}
+
+.preview-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-btn img {
+  width: 20px; /* Example size, adjust as needed */
+  height: auto;
+  margin-left: 300px;
+}

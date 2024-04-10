@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ValorVault</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="SideBar.css">
+</head>
+
+<body>
+    <!-- Menu icon to toggle the sidebar -->
+    <div id="menu-icon" onclick="toggleSidebar()">
+        <!-- Open icon (initially visible) -->
+        <img src="Page_images/Open-SideBar.png" alt="Open Sidebar" id="open-sidebar">
+        <!-- Close icon (initially hidden) -->
+        <img src="Page_images/Close-SideBar.png" alt="Close Sidebar" id="close-sidebar" style="display: none;">
+    </div>
+
+    <!-- Sidebar navigation -->
+    <nav id="sidebar">
+        <br />
+        <br />
+        <a href="#cs2skins-section">Counter-Strike Skins</a>
+        <a href="#cs2stickers-section">Counter-Strike Stickers</a>
+        <a href="#Valoskins-section">Valorant Skins</a>
+        <a href="#Valostickers-section">Valorant Stickers</a>
+        <!-- Other navigation links if needed -->
+    </nav>
+
+    <!-- Main Header with Banner Image -->
+    <header class="site-banner">
+        <img src="Page_images/Banner.png" alt="ValorVault Skins & Stickers Collections">
+    </header>
+
+    <!-- Main content area -->
+    <main id="main-content">
+        <div class="grid-container" id="cs2skins-section">
+            <!-- CS:GO 2 Skins will be loaded here -->
+        </div>
+        <div class="grid-container" id="cs2stickers-section">
+            <!-- CS:GO 2 stickers will be loaded here -->
+        </div>
+        <div class="grid-container" id="Valoskins-section">
+            <!-- Valorant skins will be loaded here -->
+        </div>
+        <div class="grid-container" id="Valostickers-section">
+            <!-- Valorant stickers will be loaded here -->
+        </div>
+    </main>
+
+    <script src="LoadValorantData.js"></script>
+    <script src="LoadCSGOData.js"></script> 
+    <script src="SideBar.js"></script>
+</body>
+
+</html>
