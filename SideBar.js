@@ -33,10 +33,24 @@ window.addEventListener('DOMContentLoaded', (event) => {
             
             // Move the clicked section to the top of the main content
             mainContent.prepend(section);
-
+            window.scrollTo(0, 0);
+            
             // Close the sidebar
             toggleSidebar();
         });
     });
 });
 
+function performSearch() {
+    const searchTerm = document.getElementById('search-input').value.toLowerCase();
+    const allItems = [...document.querySelectorAll('.item')]; // Assuming your items have a class 'item'
+    allItems.forEach(item => {
+        // Assuming each item has a data attribute or innerText that includes the name
+        const itemName = item.innerText.toLowerCase() || item.dataset.name.toLowerCase();
+        if (itemName.includes(searchTerm)) {
+            item.style.display = ''; // Show matching item
+        } else {
+            item.style.display = 'none'; // Hide non-matching items
+        }
+    });
+}

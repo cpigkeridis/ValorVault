@@ -13,7 +13,7 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* Creates 5 columns of equal width */
+  grid-template-columns: repeat(4, 1fr); /* Creates 5 columns of equal width */
   gap: 20px; /* Adjust the gap between items as needed */
   margin: 20px auto; /* Add some margin around the grid for spacing */
 }
@@ -89,4 +89,89 @@ body {
   width: 20px; /* Example size, adjust as needed */
   height: auto;
   margin-left: 300px;
+}
+
+@media (min-width: 768px) {  /*CSS for Medium Screens*/
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    /* Adjust to 3 columns */
+    gap: 20px;
+  }
+
+  .item img {
+    max-width: 200px;
+    /* Adjust image size if necessary */
+  }
+
+  .main {
+    padding: 20px;
+    /* More padding for readability */
+  }
+
+  /* Adjust sidebar or navigation styling as needed */
+  #sidebar {
+    width: 200px;
+    /* Example: Adjust sidebar width */
+  }
+}
+
+
+@media (min-width: 992px) { /*CSS for large Screens*/
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+    /* Keep or increase columns */
+    gap: 30px;
+    /* Increase gap for better spacing */
+  }
+
+  .item img {
+    max-width: 250px;
+    /* Larger images */
+  }
+
+  .main {
+    padding: 40px;
+    /* More padding around the main content */
+  }
+
+  /* Further adjustments as needed for larger displays */
+  #sidebar {
+    width: 240px;
+    /* Example: Adjust sidebar width for larger screens */
+  }
+
+  .site-banner img {
+    max-width: 100%;
+    /* Ensure banner images scale well */
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+    /* Slightly larger text on medium screens */
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    font-size: 18px;
+    /* Larger text on large screens for readability */
+  }
+}
+
+
+#sidebar .search-box-container {
+  display: flex;
+  margin-bottom: 20px;
+  /* Spacing below the search box */
+  padding: 0 10px;
+  /* Adjust based on sidebar padding */
+}
+
+#sidebar .search-input {
+  flex-grow: 1;
+  /* Let input fill available space */
+  margin-right: 10px;
+  /* Space between input and button */
 }
