@@ -30,8 +30,8 @@
 }
 
 #sidebar a:hover {
-  color: #d783ff; /* Light purple color for text */
-  text-shadow: 0 0 5px #d783ff,
+  color: rgb(246, 246, 165); /* Light purple color for text */
+  text-shadow: 0 0 5px yellow,
     /* Light purple shadow with a small blur */ 0 0 1px #b55bff;
 }
 

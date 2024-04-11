@@ -19,13 +19,21 @@ body {
 }
 
 .item {
-  /* Styling for individual items */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow to each item */
+  border: 4px solid transparent;
+  border-radius: 15px;
+  background: linear-gradient(rgb(233, 247, 163), white) padding-box,
+    radial-gradient(circle at top right, #ff8c00, #ffd700) border-box;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  display: flex; /* Use flexbox to align children */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  text-align: center; /* Ensure text is centered */
+  padding: 10px; /* Add padding for visual spacing inside the border */
+}
+
+.item:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  transform: translateY(-5px); /* Lift the item up when hovered */
 }
 
 .item img {
@@ -148,7 +156,7 @@ body {
   .item img {
     max-width: 350px; /* Optionally adjust image size for larger displays */
   }
-  
+
   .main {
     margin-left: auto;
     margin-right: auto;
@@ -162,4 +170,18 @@ body {
   }
 }
 
+/* Sidebar Back to Top button styles */
+#sidebar #back-to-top {
+  position: fixed; /* Fixed position to stay in place while scrolling */
+  right: 20px; /* Distance from the right of the viewport */
+  bottom: 20px; /* Distance from the bottom of the viewport */
+  margin: 20px auto; /* Center the button in the sidebar */
+  display: block; /* Ensure it fills the container */
+  border-radius: 20px;
+}
 
+#back-to-top img {
+  color: #fff;
+  width: 50px; /* Width of the button */
+  height: auto; /* Maintain aspect ratio */
+}
