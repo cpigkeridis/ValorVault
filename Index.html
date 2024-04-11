@@ -7,6 +7,7 @@
     <title>ValorVault</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="SideBar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
 <body>
@@ -22,10 +23,10 @@
     <nav id="sidebar">
         <br>
         <br>
-        <div id="search-box-container" class="search-box-container">
-        <input type="text" id="search-input" placeholder="Search..." class="search-input">
-        <button onclick="performSearch()" class="search-btn">Search</button>
-    </div>
+        <div class="search-box">
+            <button class="btn-search"><i class="fas fa-search"></i></button>
+            <input type="text" class="input-search" placeholder="Type to Search...">
+        </div>
         <a href="#cs2skins-section">Counter-Strike Skins</a>
         <a href="#cs2stickers-section">Counter-Strike Stickers</a>
         <a href="#Valoskins-section">Valorant Skins</a>
@@ -55,7 +56,7 @@
     </main>
 
     <script src="LoadValorantData.js"></script>
-    <script src="LoadCSGOData.js"></script> 
+    <script src="LoadCSGOData.js"></script>
     <script src="SideBar.js"></script>
 </body>
 

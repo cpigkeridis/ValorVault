@@ -40,13 +40,18 @@ function setupScrollEventForValorantSkins() {
         if (window.innerHeight + window.pageYOffset >= skinsSection.offsetHeight + skinsSection.offsetTop - 200 && !isLoading && valorantSkinsLoaded < window.valorantSkinsData.length) {
             isLoading = true;
             setTimeout(() => {
-                displayValorantItems(window.valorantSkinsData.slice(valorantSkinsLoaded, valorantSkinsLoaded + valorantItemsPerLoad), 'Valoskins-section');
+                const additionalSkins = window.valorantSkinsData.slice(valorantSkinsLoaded, valorantSkinsLoaded + valorantItemsPerLoad);
                 valorantSkinsLoaded += valorantItemsPerLoad;
                 isLoading = false;
+
+                // Filter additional items if in search mode
+                const itemsToDisplay = isSearching ? additionalSkins.filter(item => item.displayName.toLowerCase().includes(currentSearchTerm)) : additionalSkins;
+                displayValorantItems(itemsToDisplay, 'Valoskins-section');
             }, 500);
         }
     });
 }
+
 
 function setupScrollEventForValorantStickers() {
     let isLoading = false;
@@ -55,13 +60,18 @@ function setupScrollEventForValorantStickers() {
         if (window.innerHeight + window.pageYOffset >= stickersSection.offsetHeight + stickersSection.offsetTop - 200 && !isLoading && valorantStickersLoaded < window.valorantStickersData.length) {
             isLoading = true;
             setTimeout(() => {
-                displayValorantItems(window.valorantStickersData.slice(valorantStickersLoaded, valorantStickersLoaded + valorantItemsPerLoad), 'Valostickers-section');
+                const additionalStickers = window.valorantStickersData.slice(valorantStickersLoaded, valorantStickersLoaded + valorantItemsPerLoad);
                 valorantStickersLoaded += valorantItemsPerLoad;
                 isLoading = false;
+
+                // Filter additional items if in search mode
+                const itemsToDisplay = isSearching ? additionalStickers.filter(item => item.displayName.toLowerCase().includes(currentSearchTerm)) : additionalStickers;
+                displayValorantItems(itemsToDisplay, 'Valostickers-section');
             }, 500);
         }
     });
 }
+
 
 function displayValorantItems(items, sectionId) {
     const container = document.getElementById(sectionId);

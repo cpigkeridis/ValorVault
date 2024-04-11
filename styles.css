@@ -91,87 +91,75 @@ body {
   margin-left: 300px;
 }
 
-@media (min-width: 768px) {  /*CSS for Medium Screens*/
+@media (min-width: 2560px) {
   .grid-container {
-    grid-template-columns: repeat(3, 1fr);
-    /* Adjust to 3 columns */
-    gap: 20px;
+    grid-template-columns: repeat(5, 1fr); /* Display 5 items per row */
+    gap: 40px; /* Maintain or adjust the gap for better visual spacing */
   }
 
   .item img {
-    max-width: 200px;
-    /* Adjust image size if necessary */
+    max-width: 350px; /* Optionally adjust image size for larger displays */
   }
 
   .main {
-    padding: 20px;
-    /* More padding for readability */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 2560px; /* Adjust max width for this resolution */
+    padding: 60px; /* Adjust padding for better spacing on very large screens */
   }
 
-  /* Adjust sidebar or navigation styling as needed */
-  #sidebar {
-    width: 200px;
-    /* Example: Adjust sidebar width */
+  /* Adjustments for very large displays */
+  body {
+    font-size: 22px; /* Optionally increase font size for better readability */
   }
 }
 
-
-@media (min-width: 992px) { /*CSS for large Screens*/
+@media (min-width: 1920px) and (max-width: 2559px) {
+  /* Styles for screens between 1920px and 2559px wide */
   .grid-container {
-    grid-template-columns: repeat(4, 1fr);
-    /* Keep or increase columns */
-    gap: 30px;
-    /* Increase gap for better spacing */
+    grid-template-columns: repeat(4, 1fr); /* Adjust for wider screens */
+    gap: 40px; /* Optionally increase the gap for better visual spacing */
   }
 
   .item img {
-    max-width: 250px;
-    /* Larger images */
+    max-width: 300px; /* Optionally increase image size for larger displays */
   }
 
   .main {
-    padding: 40px;
-    /* More padding around the main content */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1920px; /* Limit the max width for readability */
+    padding: 60px; /* Increase padding for better spacing on large screens */
   }
 
-  /* Further adjustments as needed for larger displays */
-  #sidebar {
-    width: 240px;
-    /* Example: Adjust sidebar width for larger screens */
-  }
-
-  .site-banner img {
-    max-width: 100%;
-    /* Ensure banner images scale well */
-  }
-}
-
-@media (min-width: 768px) {
+  /* Adjustments as needed for large displays */
   body {
-    font-size: 16px;
-    /* Slightly larger text on medium screens */
+    font-size: 20px; /* Increase font size for better readability */
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 2560px) {
+  /* Styles specifically for screens 2560px wide and larger */
+  .grid-container {
+    grid-template-columns: repeat(5, 1fr); /* Display 5 items per row */
+    gap: 40px; /* Maintain or adjust the gap for better visual spacing */
+  }
+
+  .item img {
+    max-width: 350px; /* Optionally adjust image size for larger displays */
+  }
+  
+  .main {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 2560px; /* Adjust max width for this resolution */
+    padding: 60px; /* Adjust padding for better spacing on very large screens */
+  }
+
+  /* Adjustments for very large displays */
   body {
-    font-size: 18px;
-    /* Larger text on large screens for readability */
+    font-size: 22px; /* Optionally increase font size for better readability */
   }
 }
 
 
-#sidebar .search-box-container {
-  display: flex;
-  margin-bottom: 20px;
-  /* Spacing below the search box */
-  padding: 0 10px;
-  /* Adjust based on sidebar padding */
-}
-
-#sidebar .search-input {
-  flex-grow: 1;
-  /* Let input fill available space */
-  margin-right: 10px;
-  /* Space between input and button */
-}

@@ -41,16 +41,61 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
-function performSearch() {
-    const searchTerm = document.getElementById('search-input').value.toLowerCase();
-    const allItems = [...document.querySelectorAll('.item')]; // Assuming your items have a class 'item'
-    allItems.forEach(item => {
-        // Assuming each item has a data attribute or innerText that includes the name
-        const itemName = item.innerText.toLowerCase() || item.dataset.name.toLowerCase();
-        if (itemName.includes(searchTerm)) {
-            item.style.display = ''; // Show matching item
-        } else {
-            item.style.display = 'none'; // Hide non-matching items
-        }
-    });
+
+
+let isSearching = false;
+let currentSearchTerm = '';
+
+
+function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
 }
+
+const setupSearch = () => {
+    const searchInput = document.querySelector('.input-search');
+    const debouncedPerformSearch = debounce((searchTerm) => {
+        performSearch(searchTerm);
+    }, 400); // Wait for 300 ms of inactivity before searching
+
+    searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        isSearching = searchTerm.length > 0;
+        currentSearchTerm = searchTerm;
+        debouncedPerformSearch(searchTerm);
+    });
+};
+  
+  function performSearch(searchTerm) {
+    // Filter and display CS skins
+    const filteredSkins = isSearching ? window.skinsData.filter(item => item.name.toLowerCase().includes(searchTerm)) : window.skinsData.slice(0, skinsLoaded);
+    document.getElementById('cs2skins-section').innerHTML = '';
+    displayItems(filteredSkins, 'cs2skins-section');
+  
+    // Filter and display CS stickers
+    const filteredStickers = isSearching ? window.stickersData.filter(item => item.name.toLowerCase().includes(searchTerm)) : window.stickersData.slice(0, stickersLoaded);
+    document.getElementById('cs2stickers-section').innerHTML = '';
+    displayItems(filteredStickers, 'cs2stickers-section');
+
+    // Filter and display Valorant skins
+    const filteredValorantSkins = isSearching ? window.valorantSkinsData.filter(item => item.displayName.toLowerCase().includes(searchTerm)) : window.valorantSkinsData.slice(0, valorantSkinsLoaded);
+    document.getElementById('Valoskins-section').innerHTML = '';
+    displayValorantItems(filteredValorantSkins, 'Valoskins-section');
+
+    // Filter and display Valorant stickers
+    const filteredValorantStickers = isSearching ? window.valorantStickersData.filter(item => item.displayName.toLowerCase().includes(searchTerm)) : window.valorantStickersData.slice(0, valorantStickersLoaded);
+    document.getElementById('Valostickers-section').innerHTML = '';
+    displayValorantItems(filteredValorantStickers, 'Valostickers-section');
+}
+
+  // Call setupSearch in your DOMContentLoaded event listener
+  window.addEventListener('DOMContentLoaded', (event) => {
+      setupSearch(); // Initialize the search functionality
+  });

@@ -41,9 +41,13 @@ function setupScrollEventForSkins() {
         if (window.innerHeight + window.pageYOffset >= skinsSection.offsetHeight + skinsSection.offsetTop - 200 && !isLoading && skinsLoaded < window.skinsData.length) {
             isLoading = true;
             setTimeout(() => {
-                displayItems(window.skinsData.slice(skinsLoaded, skinsLoaded + itemsPerLoad), 'cs2skins-section');
+                const additionalSkins = window.skinsData.slice(skinsLoaded, skinsLoaded + itemsPerLoad);
                 skinsLoaded += itemsPerLoad;
                 isLoading = false;
+
+                // Filter additional items if in search mode
+                const itemsToDisplay = isSearching ? additionalSkins.filter(item => item.name.toLowerCase().includes(currentSearchTerm)) : additionalSkins;
+                displayItems(itemsToDisplay, 'cs2skins-section');
             }, 500);
         }
     });
@@ -56,13 +60,18 @@ function setupScrollEventForStickers() {
         if (window.innerHeight + window.pageYOffset >= stickersSection.offsetHeight + stickersSection.offsetTop - 200 && !isLoading && stickersLoaded < window.stickersData.length) {
             isLoading = true;
             setTimeout(() => {
-                displayItems(window.stickersData.slice(stickersLoaded, stickersLoaded + itemsPerLoad), 'cs2stickers-section');
-                stickersLoaded += itemsPerLoad;
+                const additionalStickers = window.stickersData.slice(stickersLoaded, stickersLoaded + itemsPerLoad);
+                stickersLoaded += itemsPerLoad; // Increment regardless of search to maintain correct position
                 isLoading = false;
+
+                // Filter additional items if in search mode
+                const itemsToDisplay = isSearching ? additionalStickers.filter(item => item.name.toLowerCase().includes(currentSearchTerm)) : additionalStickers;
+                displayItems(itemsToDisplay, 'cs2stickers-section');
             }, 500);
         }
     });
 }
+
 
 function displayItems(items, sectionId) {
     const container = document.getElementById(sectionId);
