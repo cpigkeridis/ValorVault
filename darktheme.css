@@ -1,0 +1,20 @@
+/* Default Light Theme */
+body {
+  background-color: lightyellow;
+}
+
+/* Dark Theme - Applied via a class on the body */
+.dark-theme {
+  background-color: #171717;
+  color: #fff;
+}
+
+/* Dark theme adjustments for .item */
+.dark-theme .item {
+  background: linear-gradient(#444, #555) padding-box,
+    radial-gradient(circle at top right, #ff8c00, #ffd700) border-box;
+  color: #ddd; /* Lighter text color for better readability on dark background */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Darker shadow for more depth */
+}
+
+

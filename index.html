@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="SideBar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="darktheme.css">
 </head>
 
 <body>
@@ -27,18 +28,20 @@
             <button class="btn-search"><i class="fas fa-search"></i></button>
             <input type="text" class="input-search" placeholder="Type to Search...">
         </div>
-            <a href="#cs2skins-section">Counter-Strike Skins</a>
-            <a href="#cs2stickers-section">Counter-Strike Stickers</a>
-            <a href="#Valoskins-section">Valorant Skins</a>
-            <a href="#Valostickers-section">Valorant Stickers</a>
-
-            <button id="back-to-top" title="Back to top">
-                <img src="Page_images/top.png" alt="Back to Top">
-            </button>  
+        <a href="#cs2skins-section">Counter-Strike Skins</a>
+        <a href="#cs2stickers-section">Counter-Strike Stickers</a>
+        <a href="#Valoskins-section">Valorant Skins</a>
+        <a href="#Valostickers-section">Valorant Stickers</a>
+        <button id="back-to-top" title="Back to top">
+            <img src="Page_images/top.png" alt="Back to Top">
+        </button>
+        <button id="theme-toggle" title="Toggle Theme">
+            <img src="Page_images/icons8-day-and-night-50.png" alt="Toggle Dark/Light Theme">
+        </button>
     </nav>
     <!-- Main Header with Banner Image -->
     <header class="site-banner">
-        <img src="Page_images/Banner.png" alt="ValorVault Skins & Stickers Collections">
+        <img id="banner-image" src="Page_images/BannerBlack.png" alt="ValorVault Skins & Stickers Collections">
     </header>
 
     <!-- Main content area -->
@@ -57,7 +60,6 @@
         </div>
     </main>
 
-    <script src="BackToTheTop.js"></script>
     <script src="LoadValorantData.js"></script>
     <script src="LoadCSGOData.js"></script>
     <script src="SideBar.js"></script>

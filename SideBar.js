@@ -1,4 +1,4 @@
-function toggleSidebar() {
+function toggleSidebar() {   
     const body = document.body;
     const sidebar = document.getElementById('sidebar');
     const openIcon = document.getElementById('open-sidebar');
@@ -63,7 +63,7 @@ const setupSearch = () => {
     const searchInput = document.querySelector('.input-search');
     const debouncedPerformSearch = debounce((searchTerm) => {
         performSearch(searchTerm);
-    }, 400); // Wait for 300 ms of inactivity before searching
+    }, 400); // Wait for 400 ms of inactivity before searching
 
     searchInput.addEventListener('input', function() {
         const searchTerm = this.value.toLowerCase();
@@ -95,7 +95,45 @@ const setupSearch = () => {
     displayValorantItems(filteredValorantStickers, 'Valostickers-section');
 }
 
-  // Call setupSearch in your DOMContentLoaded event listener
+  
   window.addEventListener('DOMContentLoaded', (event) => {
       setupSearch(); // Initialize the search functionality
   });
+
+  document.getElementById('back-to-top').addEventListener('click', function() {
+    window.scrollTo({
+        top: 0, // Scroll to the top of the page
+        behavior: 'smooth' // Smooth scroll
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const themeToggleButton = document.getElementById('theme-toggle');
+    const bodyElement = document.body;
+    const bannerImage = document.getElementById('banner-image');
+
+    // Function to change the banner image based on theme
+    function updateBannerImage() {
+        if (bodyElement.classList.contains('dark-theme')) {
+            bannerImage.src = 'Page_images/BannerWhite.png';
+        } else {
+            bannerImage.src = 'Page_images/BannerBlack.png';
+        }
+    }
+
+    // Event listener for the theme toggle button
+    themeToggleButton.addEventListener('click', function() {
+        bodyElement.classList.toggle('dark-theme');
+        updateBannerImage(); // Change the banner image whenever the theme is toggled
+    });
+
+    // Set the initial theme and banner image
+    if (localStorage.getItem('theme') === 'dark') {
+        bodyElement.classList.add('dark-theme');
+        bannerImage.src = 'Page_images/BannerWhite.png'; // Set to white banner for dark theme
+    } else {
+        bodyElement.classList.remove('dark-theme');
+        bannerImage.src = 'Page_images/BannerBlack.png'; // Set to black banner for light theme
+    }
+});

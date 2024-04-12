@@ -174,14 +174,15 @@ body {
 #sidebar #back-to-top {
   position: fixed; /* Fixed position to stay in place while scrolling */
   right: 20px; /* Distance from the right of the viewport */
-  bottom: 20px; /* Distance from the bottom of the viewport */
+  bottom: 1px; /* Distance from the bottom of the viewport */
   margin: 20px auto; /* Center the button in the sidebar */
   display: block; /* Ensure it fills the container */
   border-radius: 20px;
+  border: none;
 }
 
 #back-to-top img {
   color: #fff;
-  width: 50px; /* Width of the button */
+  width: 40px; /* Width of the button */
   height: auto; /* Maintain aspect ratio */
 }
