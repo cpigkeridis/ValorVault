@@ -155,6 +155,7 @@ body.pushed #main-content {
 }
 
 .submenu-icon {
+  margin-right: 10px;
   vertical-align: middle;
   height: 30px; /* Or your preferred size */
   width: auto; /* To maintain the aspect ratio */

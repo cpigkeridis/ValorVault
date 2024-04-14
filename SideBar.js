@@ -111,13 +111,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const themeToggleButton = document.getElementById('theme-toggle');
     const bodyElement = document.body;
     const bannerImage = document.getElementById('banner-image');
+    const OpenSidebar = document.getElementById('open-sidebar');
+
+
+    function updateSideBarIcon() {
+        if (bodyElement.classList.contains('dark-theme')) {
+            OpenSidebar.src = 'Page_images/Open-SideBar-White.png';
+        } else {
+            OpenSidebar.src = 'Page_images/Open-SideBar.png';
+        }
+    }
 
     // Function to change the banner image based on theme
     function updateBannerImage() {
         if (bodyElement.classList.contains('dark-theme')) {
-            bannerImage.src = 'Page_images/BannerWhite.png';
+            OpenSidebar.src = 'Page_images/BannerWhite.png';
         } else {
-            bannerImage.src = 'Page_images/BannerBlack.png';
+            OpenSidebar.src = 'Page_images/BannerBlack.png';
         }
     }
 
@@ -125,15 +135,19 @@ document.addEventListener('DOMContentLoaded', function () {
     themeToggleButton.addEventListener('click', function() {
         bodyElement.classList.toggle('dark-theme');
         updateBannerImage(); // Change the banner image whenever the theme is toggled
+        updateSideBarIcon() //  Change the sidebar icon whenever the theme is toggled
     });
+
 
     // Set the initial theme and banner image
     if (localStorage.getItem('theme') === 'dark') {
         bodyElement.classList.add('dark-theme');
         bannerImage.src = 'Page_images/BannerWhite.png'; // Set to white banner for dark theme
+        OpenSidebar.src = 'Page_images/BannerWhite.png';
     } else {
         bodyElement.classList.remove('dark-theme');
         bannerImage.src = 'Page_images/BannerBlack.png'; // Set to black banner for light theme
+        OpenSidebar.src = 'Page_images/Open-SideBar.png';
     }
 });
 
