@@ -74,10 +74,10 @@ const setupSearch = () => {
   
   function performSearch(searchTerm) {
     // Filter and display CS skins
-    const filteredSkins = isSearching ? window.skinsData.filter(item => item.name.toLowerCase().includes(searchTerm)) : window.skinsData.slice(0, skinsLoaded);
+    const filteredSkins = isSearching ? window.skinsData.filter(item => {return item.name.toLowerCase().startsWith(searchTerm.toLowerCase());}) : window.skinsData.slice(0, skinsLoaded);
     document.getElementById('cs2skins-section').innerHTML = '';
     displayItems(filteredSkins, 'cs2skins-section');
-  
+    
     // Filter and display CS stickers
     const filteredStickers = isSearching ? window.stickersData.filter(item => item.name.toLowerCase().includes(searchTerm)) : window.stickersData.slice(0, stickersLoaded);
     document.getElementById('cs2stickers-section').innerHTML = '';
@@ -164,6 +164,28 @@ function toggleSubmenu(submenuId) {
     });
 }
 
+function setupCategoryLinkSearch() {
+    // Add event listeners to all category links
+    const categoryLinks = document.querySelectorAll('.sub-sub-menu a');
+    categoryLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default action
+            const searchTerm = link.textContent.trim(); // Get the text content of the link
+            updateSearchInputAndSearch(searchTerm); // Update the search input and perform the search
+        });
+    });
+}
+
+function updateSearchInputAndSearch(searchTerm) {
+    const searchInput = document.querySelector('.input-search');
+    searchInput.value = searchTerm; // Update the search input field
+    searchInput.dispatchEvent(new Event('input')); // Manually trigger the input event to start the search
+}
+
+// Ensure this function is called when the document is ready
+document.addEventListener('DOMContentLoaded', function() {
+    setupCategoryLinkSearch(); // Set up the search functionality for category links
+});
 
 
 // Add event listener to the 'Counter-Strike Skins' toggleable link
