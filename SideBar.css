@@ -24,7 +24,7 @@
   padding: 6px 8px 6px 16px;
   margin-left: -50px;
   text-decoration: none;
-  font-size: 19px;
+  font-size: medium;
   color: #ffffff;
   display: block;
   transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition for color and shadow */
@@ -152,4 +152,10 @@ body.pushed #main-content {
 
 .sidebar-text {
   margin-left: 100px; /* Adjust the margin as needed */
+}
+
+.submenu-icon {
+  vertical-align: middle;
+  height: 30px; /* Or your preferred size */
+  width: auto; /* To maintain the aspect ratio */
 }
