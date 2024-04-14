@@ -35,8 +35,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             mainContent.prepend(section);
             window.scrollTo(0, 0);
             
-            // Close the sidebar
-            toggleSidebar();
+           
         });
     });
 });
@@ -136,4 +135,39 @@ document.addEventListener('DOMContentLoaded', function () {
         bodyElement.classList.remove('dark-theme');
         bannerImage.src = 'Page_images/BannerBlack.png'; // Set to black banner for light theme
     }
+});
+
+document.querySelectorAll('.submenu-label').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var subSubMenu = this.nextElementSibling;
+        if (subSubMenu.style.display === 'block') {
+            subSubMenu.style.display = 'none';
+        } else {
+            document.querySelectorAll('.sub-sub-menu').forEach(subMenu => subMenu.style.display = 'none');
+            subSubMenu.style.display = 'block';
+        }
+    });
+});
+
+function toggleSubmenu(submenuId) {
+    const allSubmenus = document.querySelectorAll('.sub-menu');
+    const targetSubmenu = document.getElementById(submenuId);
+    
+    // Toggle the target submenu and close all others
+    allSubmenus.forEach(menu => {
+        if(menu.id === submenuId) {
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        } else {
+            menu.style.display = 'none';
+        }
+    });
+}
+
+
+
+// Add event listener to the 'Counter-Strike Skins' toggleable link
+document.querySelector('.toggleable-link').addEventListener('click', function(e) {
+    e.preventDefault();
+    toggleSubmenu('cs2skins-sub-menu'); // Pass the ID of the submenu you want to toggle
 });

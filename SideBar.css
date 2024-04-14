@@ -22,8 +22,9 @@
 /* Sidebar links styles */
 #sidebar a {
   padding: 6px 8px 6px 16px;
+  margin-left: -50px; 
   text-decoration: none;
-  font-size: 21px;
+  font-size: 19px;
   color: #ffffff;
   display: block;
   transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition for color and shadow */
@@ -131,14 +132,23 @@ body.pushed #main-content {
   border: none;
   cursor: pointer;
   position: fixed; /* Keeps the button fixed during scrolling */
-  left: 20px; /* Distance from the left of the viewport */
-  bottom: 20px; /* Distance from the bottom of the viewport */
+  left: 170px; /* Distance from the left of the viewport */
+  top: 20px; /* Distance from the bottom of the viewport */
   margin: 0; /* Adjust margin if needed */
   display: block; /* Ensures the button is properly displayed */
   border-radius: 20px; /* Rounded corners for aesthetics */
 }
 
 #theme-toggle img {
-  width: 80%;
+  width: 70%;
   height: auto;
+}
+
+.sub-menu,
+.sub-sub-menu {
+  display: none;
+}
+
+.sidebar-text {
+  margin-left: 100px; /* Adjust the margin as needed */
 }

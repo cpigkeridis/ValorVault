@@ -6,7 +6,6 @@ body {
 /* Dark Theme - Applied via a class on the body */
 .dark-theme {
   background-color: #171717;
-  color: #fff;
 }
 
 /* Dark theme adjustments for .item */

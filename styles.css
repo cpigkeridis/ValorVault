@@ -21,7 +21,8 @@ body {
 .item {
   border: 4px solid transparent;
   border-radius: 15px;
-  background: linear-gradient(rgb(233, 247, 163), white) padding-box,
+  background: linear-gradient(rgb(255, 255, 255), rgb(109, 109, 109))
+      padding-box,
     radial-gradient(circle at top right, #ff8c00, #ffd700) border-box;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   display: flex; /* Use flexbox to align children */
