@@ -13,9 +13,9 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Creates 5 columns of equal width */
-  gap: 20px; /* Adjust the gap between items as needed */
-  margin: 20px auto; /* Add some margin around the grid for spacing */
+  grid-template-columns: repeat(4, 1fr); /* Creates 5 columns*/
+  gap: 20px; /*gap between items */
+  margin: 20px auto; /*margin around the grid for spacing */
 }
 
 .item {
@@ -78,8 +78,8 @@ body {
 }
 
 .enlarged-image {
-  max-width: 90%; /* Adjust size as needed */
-  max-height: 90%; /* Adjust size as needed */
+  max-width: 90%; 
+  max-height: 90%; 
   box-shadow: 0 0 20px #fff; /* Optional: Adds a shadow for contrast */
   background-color: #000000;
 }

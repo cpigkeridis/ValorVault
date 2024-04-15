@@ -24,7 +24,6 @@
   padding: 6px 8px 6px 16px;
   margin-left: -50px;
   text-decoration: none;
-  font-size: medium;
   color: #ffffff;
   display: block;
   transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition for color and shadow */
@@ -36,8 +35,8 @@
     /* Light purple shadow with a small blur */ 0 0 1px #b55bff;
 }
 
-/* Menu icon styles */
-#menu-icon {
+ 
+#menu-icon {  /* Menu icon styles */
   position: fixed;
   top: 20px;
   left: 20px;
@@ -57,15 +56,15 @@
   transition: 0.3s;
 }
 
-/* Smooth scrolling */
+
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* Smooth scrolling */
 }
 
-/* Add border radius to the body when the sidebar is open */
-body.pushed #main-content {
+
+body.pushed #main-content { 
   margin-left: 240px;
-  transition: margin-left 0.3s ease-in-out;
+  transition: margin-left 0.3s ease-in-out; /* Add border radius to the body when the sidebar is open */
 }
 
 * {
@@ -134,7 +133,7 @@ body.pushed #main-content {
   position: fixed; /* Keeps the button fixed during scrolling */
   left: 170px; /* Distance from the left of the viewport */
   top: 20px; /* Distance from the bottom of the viewport */
-  margin: 0; /* Adjust margin if needed */
+  margin: 0; 
   display: block; /* Ensures the button is properly displayed */
   border-radius: 20px; /* Rounded corners for aesthetics */
 }
@@ -144,19 +143,31 @@ body.pushed #main-content {
   height: auto;
 }
 
-.sub-menu,
+.sub-menu {
+  font-size: medium;
+  cursor: pointer;
+  display: none;
+}
 .sub-sub-menu {
+  font-size: small;
   cursor: pointer;
   display: none;
 }
 
 .sidebar-text {
-  margin-left: 100px; /* Adjust the margin as needed */
+  margin-left: 100px; 
 }
 
-.submenu-icon {
+.submenu-icon-cs {
   margin-right: 10px;
   vertical-align: middle;
-  height: 30px; /* Or your preferred size */
+  height: 30px; /* icon size */
+  width: auto; /* To maintain the aspect ratio */
+}
+
+.submenu-icon-valo {
+  margin-right: 10px;
+  vertical-align: middle;
+  height: 16px; /* icon size */
   width: auto; /* To maintain the aspect ratio */
 }
