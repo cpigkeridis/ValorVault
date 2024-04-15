@@ -92,6 +92,11 @@ const setupSearch = () => {
     const filteredValorantStickers = isSearching ? window.valorantStickersData.filter(item => item.displayName.toLowerCase().includes(searchTerm)) : window.valorantStickersData.slice(0, valorantStickersLoaded);
     document.getElementById('Valostickers-section').innerHTML = '';
     displayValorantItems(filteredValorantStickers, 'Valostickers-section');
+
+    // Filter and display League skins
+    const filteredLeagueSkins = isSearching ? window.LeagueSkinsData.filter(skin => skin.name.toLowerCase().includes(searchTerm)) : window.LeagueSkinsData.slice(0, LeagueSkinsLoaded);
+    document.getElementById('LeagueSkins-section').innerHTML = '';
+    displayLeagueItems(filteredLeagueSkins, 'LeagueSkins-section');
 }
 
   
