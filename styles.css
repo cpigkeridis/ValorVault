@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  display: flex;
+  display: grid;
   background-color: lightyellow;
 }
 
@@ -13,7 +13,7 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Creates 5 columns*/
+  grid-template-columns: repeat(4, 1fr); 
   gap: 20px; /*gap between items */
   margin: 20px auto; /*margin around the grid for spacing */
 }
@@ -103,7 +103,7 @@ body {
 @media (min-width: 2560px) {
   .grid-container {
     grid-template-columns: repeat(5, 1fr); /* Display 5 items per row */
-    gap: 40px; /* Maintain or adjust the gap for better visual spacing */
+    gap: 70px; /* Maintain or adjust the gap for better visual spacing */
   }
 
   .item img {
@@ -127,7 +127,7 @@ body {
   /* Styles for screens between 1920px and 2559px wide */
   .grid-container {
     grid-template-columns: repeat(4, 1fr); /* Adjust for wider screens */
-    gap: 40px; /* Optionally increase the gap for better visual spacing */
+    gap: 50px; /* Optionally increase the gap for better visual spacing */
   }
 
   .item img {

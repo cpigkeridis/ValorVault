@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 let LeagueSkinsLoaded = 0;
-const LeagueItemsPerLoad = 40; // Adjust based on desired items per load
+const LeagueItemsPerLoad = 20; // Adjust based on desired items per load
 
 function loadAllChampionsDetails() {
     const version = '14.7.1';
@@ -31,10 +31,13 @@ function fetchChampionDetails(championId) {
         .then(response => response.json())
         .then(data => {
             const championData = data.data[championId];
-            const skins = championData.skins.map(skin => ({
-                name: skin.name,
-                image: `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championId}_${skin.num}.jpg`
-            }));
+            // First, filter out skins where skin.num is 0, then map the remaining skins
+            const skins = championData.skins
+                .filter(skin => skin.num !== 0) // Filters out skins with skin.num equal to 0   its the default skin and art work the label is wrong so just skip it
+                .map(skin => ({
+                    name: skin.name,
+                    image: `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championId}_${skin.num}.jpg`
+                }));
             window.LeagueSkinsData = window.LeagueSkinsData.concat(skins);
             if (LeagueSkinsLoaded === 0) {
                 displayLeagueItems(window.LeagueSkinsData.slice(0, LeagueItemsPerLoad), 'LeagueSkins-section');

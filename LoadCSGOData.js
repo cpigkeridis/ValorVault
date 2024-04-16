@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 // Initial items loaded for each category
 let skinsLoaded = 0;
 let stickersLoaded = 0;
-const itemsPerLoad = 40; // Adjust based on desired items per load
+const itemsPerLoad = 20; // Adjust based on desired items per load
 
 function loadData() {
     const skinsApiUrl = 'https://bymykel.github.io/CSGO-API/api/en/skins.json';

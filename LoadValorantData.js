@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 let valorantSkinsLoaded = 0;
 let valorantStickersLoaded = 0;
-const valorantItemsPerLoad = 40; // Adjust based on desired items per load
+const valorantItemsPerLoad = 20; // Adjust based on desired items per load
 
 function loadValorantData() {
     const valorantSkinsApiUrl = 'https://valorant-api.com/v1/weapons/skins';
