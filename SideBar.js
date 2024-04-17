@@ -210,3 +210,8 @@ document.querySelector('.toggleable-link2').addEventListener('click', function(e
     e.preventDefault();
     toggleSubmenu('Valoskins-sub-menu'); // Passing the ID 
 });
+
+document.querySelector('.toggleable-link3').addEventListener('click', function(e) {
+    e.preventDefault();
+    toggleSubmenu('LeagueSkins-sub-menu'); // Passing the ID 
+});
