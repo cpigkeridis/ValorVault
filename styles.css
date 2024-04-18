@@ -13,7 +13,7 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px; /*gap between items */
   margin: 20px auto; /*margin around the grid for spacing */
 }
@@ -78,27 +78,12 @@ body {
 }
 
 .enlarged-image {
-  max-width: 90%; 
-  max-height: 90%; 
+  max-width: 90%;
+  max-height: 90%;
   box-shadow: 0 0 20px #fff; /* Optional: Adds a shadow for contrast */
   background-color: #000000;
 }
 
-.preview-btn {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.preview-btn img {
-  width: 20px; /* Example size, adjust as needed */
-  height: auto;
-  margin-left: 300px;
-}
 
 @media (min-width: 2560px) {
   .grid-container {

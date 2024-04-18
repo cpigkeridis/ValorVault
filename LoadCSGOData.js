@@ -112,20 +112,13 @@ function createItemElement(item) {
     imageElement.alt = item.name;
     imageElement.className = 'item-image lazy-load';
 
-    const previewButton = document.createElement('button');
-    previewButton.className = 'preview-btn'; // Use for styling
-
     // Create img element for the expand icon
     const expandIcon = document.createElement('img');
-    expandIcon.src = 'Page_images/expand-arrows-interface-symbol.png'; // Path to your downloaded expand icon
-    expandIcon.alt = 'Preview';
-    previewButton.appendChild(expandIcon);
 
-    previewButton.onclick = () => enlargeImage(imageElement.src); // Function to enlarge image
+    imageElement.onclick = () => enlargeImage(imageElement.src); // Function to enlarge image
 
     itemElement.appendChild(nameElement);
     itemElement.appendChild(imageElement);
-    itemElement.appendChild(previewButton);
 
     return itemElement;
 }

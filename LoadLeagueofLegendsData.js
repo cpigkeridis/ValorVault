@@ -86,14 +86,11 @@ function createItemElement(item) {
     imageElement.alt = item.name;
     imageElement.className = 'item-image';
 
-    const previewButton = document.createElement('button');
-    previewButton.className = 'preview-btn';
-    previewButton.innerHTML = '<img src="Page_images/expand-arrows-interface-symbol.png" alt="Preview" />';
-    previewButton.onclick = () => enlargeImage(imageElement.src);
+ 
+    imageElement.onclick = () => enlargeImage(imageElement.src);
 
     itemElement.appendChild(nameElement);
     itemElement.appendChild(imageElement);
-    itemElement.appendChild(previewButton);
 
     return itemElement;
 }

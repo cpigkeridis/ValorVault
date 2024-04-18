@@ -94,23 +94,13 @@ function createValorantItemElement(item) {
         imageElement.src = item.displayIcon || item.icon;
         imageElement.alt = item.displayName || item.name;
     }
-
-    const previewButton = document.createElement('button');
-    previewButton.className = 'preview-btn'; // Use for styling
-
-    // Create img element for the expand icon
-    const expandIcon = document.createElement('img');
-    expandIcon.src = 'Page_images/expand-arrows-interface-symbol.png'; // Path to your downloaded expand icon
-    expandIcon.alt = 'Preview';
-    previewButton.appendChild(expandIcon);
-
-    previewButton.onclick = () => enlargeImage(imageElement.src); // Function to enlarge image
+    
+    imageElement.onclick = () => enlargeImage(imageElement.src); // Function to enlarge image
 
     itemElement.appendChild(nameElement);
     if (item.displayIcon || item.icon) {
         itemElement.appendChild(imageElement);
     }
-    itemElement.appendChild(previewButton);
 
     return itemElement;
 }
